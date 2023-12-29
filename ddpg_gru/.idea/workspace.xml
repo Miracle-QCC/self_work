@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="49c77aa1-0baa-47b0-9467-05cafec0bef9" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="2Ynx866PdpRzjcTEn1l5nhpYaud" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable" />
+  </component>
+  <component name="RunManager">
+    <configuration name="gruddpg" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ddpg_gru" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gruddpg.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.gruddpg" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="49c77aa1-0baa-47b0-9467-05cafec0bef9" name="Default Changelist" comment="" />
+      <created>1701174981133</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1701174981133</updated>
+      <workItem from="1701174984352" duration="4819000" />
+      <workItem from="1701348563209" duration="1229000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2213" y="1831" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1701177147873">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state x="2213" y="1831" key="#com.intellij.execution.impl.EditConfigurationsDialog/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1701177147873" />
+    <state x="503" y="1469" width="841" height="511" key="#xdebugger.evaluate" timestamp="1701179459924">
+      <screen x="0" y="1467" width="1440" height="1093" />
+    </state>
+    <state x="736" y="1310" key="#xdebugger.evaluate/1440.1440.2560.1440/0.1467.1440.1093@0.1467.1440.1093" timestamp="1701178372994" />
+    <state x="503" y="1469" width="841" height="511" key="#xdebugger.evaluate/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1701179459924" />
+    <state width="1666" height="506" key="DebuggerActiveHint" timestamp="1701178945913">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="1666" height="506" key="DebuggerActiveHint/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1701178945913" />
+    <state width="2444" height="386" key="GridCell.Tab.0.bottom" timestamp="1701247099564">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="2444" height="386" key="GridCell.Tab.0.bottom/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1701247099564" />
+    <state width="2444" height="386" key="GridCell.Tab.0.center" timestamp="1701247099564">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="2444" height="386" key="GridCell.Tab.0.center/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1701247099564" />
+    <state width="2444" height="386" key="GridCell.Tab.0.left" timestamp="1701247099564">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="2444" height="386" key="GridCell.Tab.0.left/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1701247099564" />
+    <state width="2444" height="386" key="GridCell.Tab.0.right" timestamp="1701247099564">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="2444" height="386" key="GridCell.Tab.0.right/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1701247099564" />
+    <state width="2444" height="474" key="GridCell.Tab.1.bottom" timestamp="1701247099559">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="2444" height="474" key="GridCell.Tab.1.bottom/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1701247099559" />
+    <state width="2444" height="474" key="GridCell.Tab.1.center" timestamp="1701247099559">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="2444" height="474" key="GridCell.Tab.1.center/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1701247099559" />
+    <state width="2444" height="474" key="GridCell.Tab.1.left" timestamp="1701247099559">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="2444" height="474" key="GridCell.Tab.1.left/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1701247099559" />
+    <state width="2444" height="474" key="GridCell.Tab.1.right" timestamp="1701247099559">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="2444" height="474" key="GridCell.Tab.1.right/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1701247099559" />
+    <state x="2244" y="1808" width="1022" height="737" key="SettingsEditor" timestamp="1701177204937">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state x="2244" y="1808" width="1022" height="737" key="SettingsEditor/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1701177204937" />
+    <state x="2418" y="1789" width="672" height="678" key="search.everywhere.popup" timestamp="1701177075515">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state x="2418" y="1789" width="672" height="678" key="search.everywhere.popup/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1701177075515" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/gruddpg.py</url>
+          <line>269</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ddpg_gru$gruddpg.coverage" NAME="gruddpg Coverage Results" MODIFIED="1701179485184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ddpg_gru$pytest_in_gruddpg_py.coverage" NAME="pytest in gruddpg.py Coverage Results" MODIFIED="1701177138516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

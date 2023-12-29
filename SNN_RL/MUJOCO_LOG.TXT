@@ -1,0 +1,15 @@
+Fri Dec  1 16:18:04 2023
+ERROR: Could not open activation key file (null)
+
+Fri Dec  1 16:19:05 2023
+ERROR: Could not open activation key file (null)
+
+Fri Dec  1 16:21:14 2023
+ERROR: Could not open activation key file MUJOCO_KEY_PATH=/home/qcj/.mujoco/mjkey.txt
+
+Fri Dec  1 16:24:42 2023
+ERROR: Could not open activation key file MUJOCO_KEY_PATH=/home/qcj/.mujoco/mujoco200_linux/bin/mjkey.txt
+
+Fri Dec  1 16:26:41 2023
+ERROR: Could not open activation key file MUJOCO_KEY_PATH=/home/qcj/.mujoco/mujoco200_linux/bin/mjkey.txt
+

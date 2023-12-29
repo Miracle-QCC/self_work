@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="db711e16-ba3e-4e1a-97b2-7f4ec70a96d6" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="2Yq3tuxfTQJDpEvRRztOQK2EXR5" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../irs无人机" />
+  </component>
+  <component name="RunManager" selected="Python.TCN(1)">
+    <configuration name="TCN(1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="prde_3cls_reg" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TCN(1).py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="prde_3cls_reg" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.TCN(1)" />
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="db711e16-ba3e-4e1a-97b2-7f4ec70a96d6" name="Default Changelist" comment="" />
+      <created>1701239500120</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1701239500120</updated>
+      <workItem from="1701239501970" duration="5218000" />
+      <workItem from="1701249571908" duration="4861000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2513" y="1918" key="#xdebugger.evaluate" timestamp="1701250554343">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state x="2513" y="1918" key="#xdebugger.evaluate/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1701250554343" />
+    <state width="1657" height="506" key="DebuggerActiveHint" timestamp="1701246605365">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="1657" height="506" key="DebuggerActiveHint/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1701246605365" />
+    <state x="2524" y="1916" width="452" height="521" key="FileChooserDialogImpl" timestamp="1701254591200">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state x="2524" y="1916" width="452" height="521" key="FileChooserDialogImpl/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1701254591200" />
+    <state width="2444" height="593" key="GridCell.Tab.0.bottom" timestamp="1701264458209">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="2444" height="593" key="GridCell.Tab.0.bottom/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1701264458209" />
+    <state width="2444" height="593" key="GridCell.Tab.0.center" timestamp="1701264458209">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="2444" height="593" key="GridCell.Tab.0.center/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1701264458209" />
+    <state width="2444" height="593" key="GridCell.Tab.0.left" timestamp="1701264458209">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="2444" height="593" key="GridCell.Tab.0.left/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1701264458209" />
+    <state width="2444" height="593" key="GridCell.Tab.0.right" timestamp="1701264458209">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="2444" height="593" key="GridCell.Tab.0.right/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1701264458209" />
+    <state width="2444" height="474" key="GridCell.Tab.1.bottom" timestamp="1701264458207">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="2444" height="474" key="GridCell.Tab.1.bottom/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1701264458207" />
+    <state width="2444" height="474" key="GridCell.Tab.1.center" timestamp="1701264458207">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="2444" height="474" key="GridCell.Tab.1.center/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1701264458207" />
+    <state width="2444" height="474" key="GridCell.Tab.1.left" timestamp="1701264458207">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="2444" height="474" key="GridCell.Tab.1.left/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1701264458207" />
+    <state width="2444" height="474" key="GridCell.Tab.1.right" timestamp="1701264458207">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="2444" height="474" key="GridCell.Tab.1.right/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1701264458207" />
+    <state width="1245" height="706" key="XDebugger.FullValuePopup" timestamp="1701246542804">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="1245" height="706" key="XDebugger.FullValuePopup/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1701246542804" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/TCN(1).py</url>
+          <line>90</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>31</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>85</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>51</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="alpha" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/prde_3cls_reg$TCN_1_.coverage" NAME="TCN(1) Coverage Results" MODIFIED="1701253187293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/prde_3cls_reg$main.coverage" NAME="main Coverage Results" MODIFIED="1701250594954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

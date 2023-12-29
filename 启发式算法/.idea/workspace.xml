@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6ae4bb57-5a78-485d-8673-2e94977e6766" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="JupyterTrust" id="6c919984-f952-41ee-9085-2b6370bc5fd7" />
+  <component name="ProjectId" id="2ZTEg8TJrksKQhjYdlOHfVEp3CS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager" selected="Python.draw_main">
+    <configuration name="遗传算法" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="启发式算法" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/遗传算法.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="遗传算法GA" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="启发式算法" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/遗传算法GA.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="模拟退火SA" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="启发式算法" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/模拟退火SA.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="粒子群算法" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="启发式算法" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/粒子群算法.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="draw_main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="启发式算法" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/draw_main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.draw_main" />
+        <item itemvalue="Python.遗传算法GA" />
+        <item itemvalue="Python.模拟退火SA" />
+        <item itemvalue="Python.遗传算法" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6ae4bb57-5a78-485d-8673-2e94977e6766" name="Default Changelist" comment="" />
+      <created>1702437777771</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1702437777771</updated>
+      <workItem from="1702437780445" duration="8206000" />
+      <workItem from="1702639815160" duration="8000" />
+      <workItem from="1702640396007" duration="603000" />
+      <workItem from="1702973267629" duration="598000" />
+      <workItem from="1702974119653" duration="599000" />
+      <workItem from="1703057335815" duration="12000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1688" y="1546" key="#xdebugger.evaluate" timestamp="1702442680523">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state x="2651" y="1530" key="#xdebugger.evaluate/1440.1440.2560.1440/0.1467.1440.1093@0.1467.1440.1093" timestamp="1702438789716" />
+    <state x="1688" y="1546" key="#xdebugger.evaluate/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1702442680523" />
+    <state width="1849" height="506" key="DebuggerActiveHint" timestamp="1702442716411">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="1849" height="506" key="DebuggerActiveHint/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1702442716411" />
+    <state width="2444" height="441" key="GridCell.Tab.0.bottom" timestamp="1702624425580">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="2444" height="474" key="GridCell.Tab.0.bottom/1440.1440.2560.1440/0.1467.1440.1093@0.1467.1440.1093" timestamp="1702439040737" />
+    <state width="2444" height="441" key="GridCell.Tab.0.bottom/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1702624425580" />
+    <state width="2444" height="441" key="GridCell.Tab.0.center" timestamp="1702624425580">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="2444" height="474" key="GridCell.Tab.0.center/1440.1440.2560.1440/0.1467.1440.1093@0.1467.1440.1093" timestamp="1702439040737" />
+    <state width="2444" height="441" key="GridCell.Tab.0.center/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1702624425576" />
+    <state width="2444" height="441" key="GridCell.Tab.0.left" timestamp="1702624425576">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="2444" height="474" key="GridCell.Tab.0.left/1440.1440.2560.1440/0.1467.1440.1093@0.1467.1440.1093" timestamp="1702439040737" />
+    <state width="2444" height="441" key="GridCell.Tab.0.left/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1702624425576" />
+    <state width="2444" height="441" key="GridCell.Tab.0.right" timestamp="1702624425580">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="2444" height="474" key="GridCell.Tab.0.right/1440.1440.2560.1440/0.1467.1440.1093@0.1467.1440.1093" timestamp="1702439040737" />
+    <state width="2444" height="441" key="GridCell.Tab.0.right/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1702624425580" />
+    <state width="2444" height="603" key="GridCell.Tab.1.bottom" timestamp="1702624425572">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="2444" height="474" key="GridCell.Tab.1.bottom/1440.1440.2560.1440/0.1467.1440.1093@0.1467.1440.1093" timestamp="1702439018948" />
+    <state width="2444" height="603" key="GridCell.Tab.1.bottom/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1702624425572" />
+    <state width="2444" height="603" key="GridCell.Tab.1.center" timestamp="1702624425572">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="2444" height="474" key="GridCell.Tab.1.center/1440.1440.2560.1440/0.1467.1440.1093@0.1467.1440.1093" timestamp="1702439018948" />
+    <state width="2444" height="603" key="GridCell.Tab.1.center/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1702624425572" />
+    <state width="2444" height="603" key="GridCell.Tab.1.left" timestamp="1702624425572">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="2444" height="474" key="GridCell.Tab.1.left/1440.1440.2560.1440/0.1467.1440.1093@0.1467.1440.1093" timestamp="1702439018948" />
+    <state width="2444" height="603" key="GridCell.Tab.1.left/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1702624425572" />
+    <state width="2444" height="603" key="GridCell.Tab.1.right" timestamp="1702624425572">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="2444" height="474" key="GridCell.Tab.1.right/1440.1440.2560.1440/0.1467.1440.1093@0.1467.1440.1093" timestamp="1702439018948" />
+    <state width="2444" height="603" key="GridCell.Tab.1.right/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1702624425572" />
+    <state width="1245" height="706" key="XDebugger.FullValuePopup" timestamp="1702442663267">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="1245" height="706" key="XDebugger.FullValuePopup/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1702442663267" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/draw_main.py</url>
+          <line>4</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/模拟退火SA.py</url>
+          <line>59</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/模拟退火SA.py</url>
+          <line>26</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/模拟退火SA.py</url>
+          <line>53</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/opt_main.py</url>
+          <line>215</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/opt_main.py</url>
+          <line>329</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/opt_main.py</url>
+          <line>166</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/opt_main.py</url>
+          <line>158</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/$SA.coverage" NAME="模拟退火SA Coverage Results" MODIFIED="1702443427774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/$opt_main.coverage" NAME="opt_main Coverage Results" MODIFIED="1702441464391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/$2.coverage" NAME="遗传算法GA Coverage Results" MODIFIED="1702457499632" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/$draw_main.coverage" NAME="draw_main Coverage Results" MODIFIED="1702457597045" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/$.coverage" NAME="粒子群算法 Coverage Results" MODIFIED="1702443907457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

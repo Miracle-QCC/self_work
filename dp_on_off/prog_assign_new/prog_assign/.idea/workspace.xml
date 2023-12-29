@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="dcb3dbf7-dcb3-4242-9199-820de40ab763" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="2Z5HQ46gJ0Vy8WvNnLcBVbzDkpj" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="ToolWindowDebug.ShowToolbar" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunManager" selected="Python.test (1)">
+    <configuration name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="prog_assign" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/prog_assign2.tar.gz" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/prog_assign2.tar.gz/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="prog_assign" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/prog_assign1.tar.gz/prog_assign2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/prog_assign1.tar.gz/prog_assign2/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.test (1)" />
+        <item itemvalue="Python.test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dcb3dbf7-dcb3-4242-9199-820de40ab763" name="Default Changelist" comment="" />
+      <created>1701705003463</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1701705003463</updated>
+      <workItem from="1701705010190" duration="5973000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="704" y="189" key="#test" timestamp="1701705156030">
+      <screen x="0" y="0" width="1968" height="1152" />
+    </state>
+    <state x="704" y="189" key="#test/0.0.1968.1152@0.0.1968.1152" timestamp="1701705156030" />
+    <state x="562" y="430" key="#xdebugger.evaluate" timestamp="1701709172059">
+      <screen x="0" y="0" width="1968" height="1152" />
+    </state>
+    <state x="562" y="430" key="#xdebugger.evaluate/0.0.1968.1152@0.0.1968.1152" timestamp="1701709172059" />
+    <state width="1925" height="383" key="GridCell.Tab.0.bottom" timestamp="1701711220577">
+      <screen x="0" y="0" width="1968" height="1152" />
+    </state>
+    <state width="1925" height="383" key="GridCell.Tab.0.bottom/0.0.1968.1152@0.0.1968.1152" timestamp="1701711220577" />
+    <state width="1925" height="383" key="GridCell.Tab.0.center" timestamp="1701711220577">
+      <screen x="0" y="0" width="1968" height="1152" />
+    </state>
+    <state width="1925" height="383" key="GridCell.Tab.0.center/0.0.1968.1152@0.0.1968.1152" timestamp="1701711220577" />
+    <state width="1925" height="383" key="GridCell.Tab.0.left" timestamp="1701711220577">
+      <screen x="0" y="0" width="1968" height="1152" />
+    </state>
+    <state width="1925" height="383" key="GridCell.Tab.0.left/0.0.1968.1152@0.0.1968.1152" timestamp="1701711220577" />
+    <state width="1925" height="383" key="GridCell.Tab.0.right" timestamp="1701711220577">
+      <screen x="0" y="0" width="1968" height="1152" />
+    </state>
+    <state width="1925" height="383" key="GridCell.Tab.0.right/0.0.1968.1152@0.0.1968.1152" timestamp="1701711220577" />
+    <state width="1925" height="383" key="GridCell.Tab.1.bottom" timestamp="1701711220577">
+      <screen x="0" y="0" width="1968" height="1152" />
+    </state>
+    <state width="1925" height="383" key="GridCell.Tab.1.bottom/0.0.1968.1152@0.0.1968.1152" timestamp="1701711220577" />
+    <state width="1925" height="383" key="GridCell.Tab.1.center" timestamp="1701711220577">
+      <screen x="0" y="0" width="1968" height="1152" />
+    </state>
+    <state width="1925" height="383" key="GridCell.Tab.1.center/0.0.1968.1152@0.0.1968.1152" timestamp="1701711220577" />
+    <state width="1925" height="383" key="GridCell.Tab.1.left" timestamp="1701711220577">
+      <screen x="0" y="0" width="1968" height="1152" />
+    </state>
+    <state width="1925" height="383" key="GridCell.Tab.1.left/0.0.1968.1152@0.0.1968.1152" timestamp="1701711220577" />
+    <state width="1925" height="383" key="GridCell.Tab.1.right" timestamp="1701711220577">
+      <screen x="0" y="0" width="1968" height="1152" />
+    </state>
+    <state width="1925" height="383" key="GridCell.Tab.1.right/0.0.1968.1152@0.0.1968.1152" timestamp="1701711220577" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/prog_assign1.tar.gz/prog_assign2/test.py</url>
+          <line>115</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/prog_assign2.tar.gz/test.py</url>
+          <line>14</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/prog_assign$test.coverage" NAME="test Coverage Results" MODIFIED="1701710311236" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/prog_assign1.tar.gz/prog_assign2" />
+    <SUITE FILE_PATH="coverage/prog_assign$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1701710673891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/prog_assign2.tar.gz" />
+  </component>
+</project>

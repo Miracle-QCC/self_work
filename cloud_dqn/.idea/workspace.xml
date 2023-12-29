@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="77e19c6e-d502-4437-bf0e-7158c3b5e75e" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="JupyterTrust" id="6c919984-f952-41ee-9085-2b6370bc5fd7" />
+  <component name="ProjectId" id="2ZTvP9OWbu0IsCIQUVqTqT01q9F" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/D3QN" />
+    <property name="settings.editor.selected.configurable" value="PyScientificConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/D3QN" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/D3QN" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.DDQN">
+    <configuration name="D3QN_dynamic" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="cloud_dqn" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/D3QN" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/D3QN/D3QN_dynamic.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="D3QN_main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="cloud_dqn" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/D3QN" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/D3QN/D3QN_main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="DDQN" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="cloud_dqn" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/D3QN" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/D3QN/DDQN.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="DDQN_main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="cloud_dqn" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/D3QN/DDQN_main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="DuelingDQN" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="cloud_dqn" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/D3QN" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/D3QN/DuelingDQN.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.DDQN" />
+        <item itemvalue="Python.DuelingDQN" />
+        <item itemvalue="Python.DDQN_main" />
+        <item itemvalue="Python.D3QN_dynamic" />
+        <item itemvalue="Python.D3QN_main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="77e19c6e-d502-4437-bf0e-7158c3b5e75e" name="Default Changelist" comment="" />
+      <created>1702458856264</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1702458856264</updated>
+      <workItem from="1702458858669" duration="8749000" />
+      <workItem from="1702640199116" duration="824000" />
+      <workItem from="1703157234689" duration="18386000" />
+      <workItem from="1703591821248" duration="2568000" />
+      <workItem from="1703660316494" duration="8068000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="508" y="1652" key="#xdebugger.evaluate" timestamp="1703666856299">
+      <screen x="0" y="1467" width="1440" height="1093" />
+    </state>
+    <state x="508" y="1652" key="#xdebugger.evaluate/1440.1440.2560.1440/0.1467.1440.1093@0.1467.1440.1093" timestamp="1703581342288" />
+    <state x="508" y="1652" key="#xdebugger.evaluate/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1703666856299" />
+    <state width="1842" height="506" key="DebuggerActiveHint" timestamp="1703666507910">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="1842" height="506" key="DebuggerActiveHint/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1703666507910" />
+    <state x="2538" y="1931" width="424" height="491" key="FileChooserDialogImpl" timestamp="1703212261110">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state x="2538" y="1931" width="424" height="491" key="FileChooserDialogImpl/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1703212261110" />
+    <state width="2444" height="386" key="GridCell.Tab.0.bottom" timestamp="1703670284135">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="1394" height="474" key="GridCell.Tab.0.bottom/1440.1440.2560.1440/0.1467.1440.1093@0.1467.1440.1093" timestamp="1703581273311" />
+    <state width="2444" height="386" key="GridCell.Tab.0.bottom/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1703670284135" />
+    <state width="2444" height="386" key="GridCell.Tab.0.center" timestamp="1703670284135">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="1394" height="474" key="GridCell.Tab.0.center/1440.1440.2560.1440/0.1467.1440.1093@0.1467.1440.1093" timestamp="1703581273311" />
+    <state width="2444" height="386" key="GridCell.Tab.0.center/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1703670284135" />
+    <state width="2444" height="386" key="GridCell.Tab.0.left" timestamp="1703670284135">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="1394" height="474" key="GridCell.Tab.0.left/1440.1440.2560.1440/0.1467.1440.1093@0.1467.1440.1093" timestamp="1703581273311" />
+    <state width="2444" height="386" key="GridCell.Tab.0.left/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1703670284135" />
+    <state width="2444" height="386" key="GridCell.Tab.0.right" timestamp="1703670284135">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="1394" height="474" key="GridCell.Tab.0.right/1440.1440.2560.1440/0.1467.1440.1093@0.1467.1440.1093" timestamp="1703581273311" />
+    <state width="2444" height="386" key="GridCell.Tab.0.right/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1703670284135" />
+    <state width="2444" height="474" key="GridCell.Tab.1.bottom" timestamp="1703666873697">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="1394" height="474" key="GridCell.Tab.1.bottom/1440.1440.2560.1440/0.1467.1440.1093@0.1467.1440.1093" timestamp="1703581275635" />
+    <state width="2444" height="474" key="GridCell.Tab.1.bottom/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1703666873697" />
+    <state width="2444" height="474" key="GridCell.Tab.1.center" timestamp="1703666873697">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="1394" height="474" key="GridCell.Tab.1.center/1440.1440.2560.1440/0.1467.1440.1093@0.1467.1440.1093" timestamp="1703581275635" />
+    <state width="2444" height="474" key="GridCell.Tab.1.center/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1703666873697" />
+    <state width="2444" height="474" key="GridCell.Tab.1.left" timestamp="1703666873697">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="1394" height="474" key="GridCell.Tab.1.left/1440.1440.2560.1440/0.1467.1440.1093@0.1467.1440.1093" timestamp="1703581275635" />
+    <state width="2444" height="474" key="GridCell.Tab.1.left/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1703666873697" />
+    <state width="2444" height="474" key="GridCell.Tab.1.right" timestamp="1703666873697">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="1394" height="474" key="GridCell.Tab.1.right/1440.1440.2560.1440/0.1467.1440.1093@0.1467.1440.1093" timestamp="1703581275635" />
+    <state width="2444" height="474" key="GridCell.Tab.1.right/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1703666873697" />
+    <state x="2244" y="1808" width="1022" height="737" key="SettingsEditor" timestamp="1703587062310">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state x="2244" y="1808" width="1022" height="737" key="SettingsEditor/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1703587062310" />
+    <state width="1245" height="706" key="XDebugger.FullValuePopup" timestamp="1703211833656">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="1245" height="706" key="XDebugger.FullValuePopup/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1703211833656" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/D3QN/D3QN_dynamic.py</url>
+          <line>94</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/cloud_dqn$dynamic.coverage" NAME="dynamic Coverage Results" MODIFIED="1703211335386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/D3QN" />
+    <SUITE FILE_PATH="coverage/cloud_dqn$test.coverage" NAME="test Coverage Results" MODIFIED="1702639871800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/cloud_dqn$cloud_dqn.coverage" NAME="cloud_dqn Coverage Results" MODIFIED="1702466725640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/cloud_dqn$D3QN_dynamic.coverage" NAME="D3QN_dynamic Coverage Results" MODIFIED="1703667046319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/D3QN" />
+    <SUITE FILE_PATH="coverage/cloud_dqn$DDQN_main.coverage" NAME="DDQN_main Coverage Results" MODIFIED="1703667571525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/cloud_dqn$DQN.coverage" NAME="DDQN Coverage Results" MODIFIED="1703670284122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/D3QN" />
+    <SUITE FILE_PATH="coverage/cloud_dqn$main1.coverage" NAME="main1 Coverage Results" MODIFIED="1702465920202" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/cloud_dqn$D3QN_main.coverage" NAME="D3QN_main Coverage Results" MODIFIED="1703665657025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/D3QN" />
+    <SUITE FILE_PATH="coverage/cloud_dqn$DuelingDQN.coverage" NAME="DuelingDQN Coverage Results" MODIFIED="1703669598869" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/D3QN" />
+  </component>
+</project>

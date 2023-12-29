@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="843ae465-3301-4c2f-af0c-3efb4d32c27d" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="2XslraHyXNf5XPxNnHMBN0ppv54" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../python指导" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.SEKNN">
+    <configuration name="KNN" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="KNN" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/KNN.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="SEKNN" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="KNN" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SEKNN.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="KNN" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="KNN" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.SEKNN" />
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.KNN" />
+        <item itemvalue="Python.main2" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="843ae465-3301-4c2f-af0c-3efb4d32c27d" name="Default Changelist" comment="" />
+      <created>1699425867277</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1699425867277</updated>
+      <workItem from="1699425870540" duration="20001000" />
+      <workItem from="1699596686136" duration="12113000" />
+      <workItem from="1699615336263" duration="3532000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="371" y="1295" width="915" height="511" key="#xdebugger.evaluate" timestamp="1699615877172">
+      <screen x="0" y="1467" width="1440" height="1093" />
+    </state>
+    <state x="371" y="1295" width="915" height="511" key="#xdebugger.evaluate/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1699615877172" />
+    <state width="1806" height="506" key="DebuggerActiveHint" timestamp="1699429721576">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="1806" height="506" key="DebuggerActiveHint/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1699429721576" />
+    <state x="2532" y="1920" width="424" height="520" key="FileChooserDialogImpl" timestamp="1699611702264">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state x="2532" y="1920" width="424" height="520" key="FileChooserDialogImpl/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1699611702264" />
+    <state width="2444" height="386" key="GridCell.Tab.0.bottom" timestamp="1699879952540">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="2444" height="386" key="GridCell.Tab.0.bottom/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1699879952540" />
+    <state width="2444" height="386" key="GridCell.Tab.0.center" timestamp="1699879952540">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="2444" height="386" key="GridCell.Tab.0.center/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1699879952540" />
+    <state width="2444" height="386" key="GridCell.Tab.0.left" timestamp="1699879952540">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="2444" height="386" key="GridCell.Tab.0.left/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1699879952540" />
+    <state width="2444" height="386" key="GridCell.Tab.0.right" timestamp="1699879952540">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="2444" height="386" key="GridCell.Tab.0.right/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1699879952540" />
+    <state width="2444" height="467" key="GridCell.Tab.1.bottom" timestamp="1699879952539">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="2444" height="467" key="GridCell.Tab.1.bottom/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1699879952539" />
+    <state width="2444" height="467" key="GridCell.Tab.1.center" timestamp="1699879952539">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="2444" height="467" key="GridCell.Tab.1.center/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1699879952539" />
+    <state width="2444" height="467" key="GridCell.Tab.1.left" timestamp="1699879952539">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="2444" height="467" key="GridCell.Tab.1.left/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1699879952539" />
+    <state width="2444" height="467" key="GridCell.Tab.1.right" timestamp="1699879952539">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="2444" height="467" key="GridCell.Tab.1.right/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1699879952539" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>189</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>82</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/SEKNN.py</url>
+          <line>191</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/SEKNN.py</url>
+          <line>69</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/SEKNN.py</url>
+          <line>123</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/KNN$KNN.coverage" NAME="KNN Coverage Results" MODIFIED="1699610116267" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KNN$main.coverage" NAME="main Coverage Results" MODIFIED="1699611286071" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KNN$main_3.coverage" NAME="SEKNN Coverage Results" MODIFIED="1699611317637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KNN$main2.coverage" NAME="main2 Coverage Results" MODIFIED="1699446047839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KNN$SEKNN.coverage" NAME="SEKNN Coverage Results" MODIFIED="1699616390694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

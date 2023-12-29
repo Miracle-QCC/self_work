@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="72c67b68-52b3-4b20-80cb-876b8cbf7186" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/PPO-PyTorch/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/PPO-PyTorch/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hindsight-experience-replay/arguments.py" beforeDir="false" afterPath="$PROJECT_DIR$/hindsight-experience-replay/arguments.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hindsight-experience-replay/demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/hindsight-experience-replay/demo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hindsight-experience-replay/rl_modules/ddpg_agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/hindsight-experience-replay/rl_modules/ddpg_agent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hindsight-experience-replay/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/hindsight-experience-replay/train.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/PPO-PyTorch" />
+  </component>
+  <component name="JupyterTrust" id="6c919984-f952-41ee-9085-2b6370bc5fd7" />
+  <component name="ProjectId" id="2Y9IQz0JSLUaHdg4EXnMPehAJjH" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../nnvlc" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/hindsight-experience-replay/her_modules" />
+      <recent name="$PROJECT_DIR$/hindsight-experience-replay" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/hindsight-experience-replay" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.train (1)">
+    <configuration name="demo_ppo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PPO_HER" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="LD_LIBRARY_PATH" value="$LD_LIBRARY_PATH:$USER_HOME$/.mujoco/mujoco210/bin:/usr/lib/x86_64-linux-gnu/libGLEW.so//usr/lib/nvidia" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hindsight-experience-replay" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hindsight-experience-replay/demo_ppo.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PPO_HER" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_chatgpt" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PPO_HER" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_chatgpt.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="train (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PPO_HER" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/PPO-PyTorch" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PPO-PyTorch/train.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="train_ppo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PPO_HER" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="LD_LIBRARY_PATH" value="$LD_LIBRARY_PATH:$USER_HOME$/.mujoco/mujoco210/bin:/usr/lib/x86_64-linux-gnu/libGLEW.so//usr/lib/nvidia" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hindsight-experience-replay" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hindsight-experience-replay/train_ppo.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.demo_ppo" />
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.test_chatgpt" />
+      <item itemvalue="Python.train_ppo" />
+      <item itemvalue="Python.train (1)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.train (1)" />
+        <item itemvalue="Python.test_chatgpt" />
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.demo_ppo" />
+        <item itemvalue="Python.train_ppo" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="72c67b68-52b3-4b20-80cb-876b8cbf7186" name="Default Changelist" comment="" />
+      <created>1699931790402</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1699931790402</updated>
+      <workItem from="1699931798143" duration="5532000" />
+      <workItem from="1699960778475" duration="932000" />
+      <workItem from="1699961975407" duration="31184000" />
+      <workItem from="1700190680719" duration="746000" />
+      <workItem from="1700205814161" duration="811000" />
+      <workItem from="1700212581374" duration="55000" />
+      <workItem from="1700216815351" duration="764000" />
+      <workItem from="1701843820685" duration="3812000" />
+      <workItem from="1701915438819" duration="3759000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2264" y="1857" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1700206632864">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state x="2264" y="1857" key="#com.intellij.execution.impl.EditConfigurationsDialog/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1700206632864" />
+    <state x="2425" y="1978" width="650" height="397" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1700127164553">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state x="2425" y="1978" width="650" height="397" key="#com.intellij.fileTypes.FileTypeChooser/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1700127164553" />
+    <state x="772" y="1633" width="484" height="517" key="#xdebugger.evaluate" timestamp="1700126416058">
+      <screen x="0" y="1467" width="1440" height="1093" />
+    </state>
+    <state x="772" y="1633" width="484" height="517" key="#xdebugger.evaluate/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1700126416058" />
+    <state width="1114" height="506" key="DebuggerActiveHint" timestamp="1699965451739">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="1114" height="506" key="DebuggerActiveHint/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1699965451739" />
+    <state x="2023" y="2049" width="515" height="451" key="EnvironmentVariablesDialog" timestamp="1700126687432">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state x="2023" y="2049" width="515" height="451" key="EnvironmentVariablesDialog/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1700126687432" />
+    <state x="2538" y="1931" width="424" height="491" key="FileChooserDialogImpl" timestamp="1702003851865">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state x="2538" y="1931" width="424" height="491" key="FileChooserDialogImpl/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1702003851865" />
+    <state width="1394" height="764" key="GridCell.Tab.0.bottom" timestamp="1701849405297">
+      <screen x="0" y="1467" width="1440" height="1093" />
+    </state>
+    <state width="1394" height="764" key="GridCell.Tab.0.bottom/1440.1440.2560.1440/0.1467.1440.1093@0.1467.1440.1093" timestamp="1701849405297" />
+    <state width="2444" height="386" key="GridCell.Tab.0.bottom/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1700206651498" />
+    <state width="1394" height="764" key="GridCell.Tab.0.center" timestamp="1701849405297">
+      <screen x="0" y="1467" width="1440" height="1093" />
+    </state>
+    <state width="1394" height="764" key="GridCell.Tab.0.center/1440.1440.2560.1440/0.1467.1440.1093@0.1467.1440.1093" timestamp="1701849405297" />
+    <state width="2444" height="386" key="GridCell.Tab.0.center/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1700206651498" />
+    <state width="1394" height="764" key="GridCell.Tab.0.left" timestamp="1701849405297">
+      <screen x="0" y="1467" width="1440" height="1093" />
+    </state>
+    <state width="1394" height="764" key="GridCell.Tab.0.left/1440.1440.2560.1440/0.1467.1440.1093@0.1467.1440.1093" timestamp="1701849405297" />
+    <state width="2444" height="386" key="GridCell.Tab.0.left/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1700206651498" />
+    <state width="1394" height="764" key="GridCell.Tab.0.right" timestamp="1701849405297">
+      <screen x="0" y="1467" width="1440" height="1093" />
+    </state>
+    <state width="1394" height="764" key="GridCell.Tab.0.right/1440.1440.2560.1440/0.1467.1440.1093@0.1467.1440.1093" timestamp="1701849405297" />
+    <state width="2444" height="386" key="GridCell.Tab.0.right/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1700206651498" />
+    <state width="2444" height="375" key="GridCell.Tab.1.bottom" timestamp="1700126736153">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="1394" height="932" key="GridCell.Tab.1.bottom/1440.1440.2560.1440/0.1467.1440.1093@0.1467.1440.1093" timestamp="1700107480039" />
+    <state width="2444" height="375" key="GridCell.Tab.1.bottom/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1700126736153" />
+    <state width="2444" height="375" key="GridCell.Tab.1.center" timestamp="1700126736153">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="1394" height="932" key="GridCell.Tab.1.center/1440.1440.2560.1440/0.1467.1440.1093@0.1467.1440.1093" timestamp="1700107480039" />
+    <state width="2444" height="375" key="GridCell.Tab.1.center/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1700126736153" />
+    <state width="2444" height="375" key="GridCell.Tab.1.left" timestamp="1700126736153">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="1394" height="932" key="GridCell.Tab.1.left/1440.1440.2560.1440/0.1467.1440.1093@0.1467.1440.1093" timestamp="1700107480038" />
+    <state width="2444" height="375" key="GridCell.Tab.1.left/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1700126736153" />
+    <state width="2444" height="375" key="GridCell.Tab.1.right" timestamp="1700126736153">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="1394" height="932" key="GridCell.Tab.1.right/1440.1440.2560.1440/0.1467.1440.1093@0.1467.1440.1093" timestamp="1700107480039" />
+    <state width="2444" height="375" key="GridCell.Tab.1.right/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1700126736153" />
+    <state x="2244" y="1808" width="1022" height="737" key="SettingsEditor" timestamp="1700206625434">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state x="2244" y="1808" width="1022" height="737" key="SettingsEditor/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1700206625434" />
+    <state width="1245" height="706" key="XDebugger.FullValuePopup" timestamp="1700126232887">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="1245" height="706" key="XDebugger.FullValuePopup/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1700126232887" />
+    <state x="2313" y="1791" width="873" height="771" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1700126412424">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state x="2313" y="1791" width="873" height="771" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1700126412424" />
+    <state x="1997" y="1829" width="2444" height="1341" maximized="true" key="dock-window-1" timestamp="1700103666294">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state x="1997" y="1829" width="2444" height="1341" maximized="true" key="dock-window-1/1440.1440.2560.1440/0.1467.1440.1093@0.1467.1440.1093" timestamp="1700103666294" />
+    <state x="-94" y="1516" width="1440" height="938" maximized="true" key="dock-window-2" timestamp="1700120151616">
+      <screen x="0" y="1467" width="1440" height="1093" />
+    </state>
+    <state x="-94" y="1516" width="1440" height="938" maximized="true" key="dock-window-2/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1700120151616" />
+    <state x="0" y="1467" width="1440" height="927" maximized="true" key="dock-window-3" timestamp="1700124199343">
+      <screen x="0" y="1467" width="1440" height="1093" />
+    </state>
+    <state x="0" y="1467" width="1440" height="927" maximized="true" key="dock-window-3/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1700124199343" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/hindsight-experience-replay/train.py</url>
+          <line>50</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/hindsight-experience-replay/rl_modules/ddpg_agent.py</url>
+          <line>63</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/hindsight-experience-replay/demo.py</url>
+          <line>35</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/hindsight-experience-replay/rl_modules/ddpg_agent.py</url>
+          <line>77</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/hindsight-experience-replay/her_modules/her.py</url>
+          <line>29</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/hindsight-experience-replay/rl_modules/ddpg_agent.py</url>
+          <line>92</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file:///opt/workcode/self_work/PPO_HER/hindsight-experience-replay/rl_modules/ppo_agent.py</url>
+          <line>302</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/hindsight-experience-replay/demo_ppo.py</url>
+          <line>36</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/hindsight-experience-replay/rl_modules/ddpg_agent.py</url>
+          <line>182</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file:///opt/workcode/self_work/PPO_HER/hindsight-experience-replay/rl_modules/ppo_agent.py</url>
+          <line>371</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/hindsight-experience-replay/rl_modules/ppo_agent.py</url>
+          <line>395</line>
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file:///opt/workcode/self_work/PPO_HER/hindsight-experience-replay/rl_modules/ppo_agent.py</url>
+          <line>348</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/hindsight-experience-replay/rl_modules/ppo_agent.py</url>
+          <line>328</line>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/hindsight-experience-replay/rl_modules/ddpg_agent.py</url>
+          <line>236</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file:///opt/workcode/self_work/PPO_HER/hindsight-experience-replay/rl_modules/ddpg_agent.py</url>
+          <line>236</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file:///opt/workcode/self_work/PPO_HER/hindsight-experience-replay/rl_modules/ppo_agent.py</url>
+          <line>329</line>
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/PPO_HER$train_ppo.coverage" NAME="train_ppo Coverage Results" MODIFIED="1700126460629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hindsight-experience-replay" />
+    <SUITE FILE_PATH="coverage/PPO_HER$main.coverage" NAME="main Coverage Results" MODIFIED="1700127209035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PPO_HER$ppo_agent.coverage" NAME="ppo_agent Coverage Results" MODIFIED="1700111411420" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/opt/workcode/self_work/PPO_HER/hindsight-experience-replay/rl_modules" />
+    <SUITE FILE_PATH="coverage/PPO_HER$demo.coverage" NAME="demo Coverage Results" MODIFIED="1699962454325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hindsight-experience-replay" />
+    <SUITE FILE_PATH="coverage/PPO_HER$train__1_.coverage" NAME="train (1) Coverage Results" MODIFIED="1701849397672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PPO-PyTorch" />
+    <SUITE FILE_PATH="coverage/PPO_HER$pytest_in_test_chatgpt_py.coverage" NAME="pytest in test_chatgpt.py Coverage Results" MODIFIED="1700206602312" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PPO_HER$test_chatgpt.coverage" NAME="test_chatgpt Coverage Results" MODIFIED="1700206651482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PPO_HER$train.coverage" NAME="train Coverage Results" MODIFIED="1700126113581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hindsight-experience-replay" />
+    <SUITE FILE_PATH="coverage/PPO_HER$demo_ppo.coverage" NAME="demo_ppo Coverage Results" MODIFIED="1700126736139" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hindsight-experience-replay" />
+  </component>
+</project>

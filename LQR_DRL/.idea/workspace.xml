@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="479b47f5-9d16-49a0-a537-4ee6f112d0c3" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="2Zwko3JkrrvhXgk7QHUxMQUY5Gy" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="PyScientificConfigurable" />
+  </component>
+  <component name="RunManager" selected="Python.draw">
+    <configuration name="LQR" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="LQR_DRL" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LQR.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="draw" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="LQR_DRL" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/draw.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="flow_model" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="LQR_DRL" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/flow_model.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="get_data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="LQR_DRL" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/get_data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="train" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="LQR_DRL" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/train.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.draw" />
+        <item itemvalue="Python.train" />
+        <item itemvalue="Python.LQR" />
+        <item itemvalue="Python.flow_model" />
+        <item itemvalue="Python.get_data" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="479b47f5-9d16-49a0-a537-4ee6f112d0c3" name="Default Changelist" comment="" />
+      <created>1703340700497</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1703340700497</updated>
+      <workItem from="1703340701743" duration="5763000" />
+      <workItem from="1703389911673" duration="878000" />
+      <workItem from="1703391475883" duration="4062000" />
+      <workItem from="1703402964386" duration="599000" />
+      <workItem from="1703419870207" duration="2428000" />
+      <workItem from="1703507352461" duration="15932000" />
+      <workItem from="1703591835588" duration="1803000" />
+      <workItem from="1703660317380" duration="606000" />
+      <workItem from="1703819132140" duration="876000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2429" y="1780" width="642" height="794" key="#get_data" timestamp="1703507736741">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state x="2429" y="1780" width="642" height="794" key="#get_data/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1703507736741" />
+    <state x="2861" y="1796" width="835" height="512" key="#xdebugger.evaluate" timestamp="1703583863932">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state x="740" y="278" key="#xdebugger.evaluate/0.0.1968.1152@0.0.1968.1152" timestamp="1703420901796" />
+    <state x="2861" y="1796" width="835" height="512" key="#xdebugger.evaluate/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1703583863932" />
+    <state width="1953" height="583" key="DebuggerActiveHint" timestamp="1703583797163">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="1501" height="466" key="DebuggerActiveHint/0.0.1968.1152@0.0.1968.1152" timestamp="1703420511516" />
+    <state width="1953" height="583" key="DebuggerActiveHint/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1703583797163" />
+    <state width="2444" height="386" key="GridCell.Tab.0.bottom" timestamp="1703590940663">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="1925" height="383" key="GridCell.Tab.0.bottom/0.0.1968.1152@0.0.1968.1152" timestamp="1703421283916" />
+    <state width="2444" height="386" key="GridCell.Tab.0.bottom/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1703590940663" />
+    <state width="2444" height="386" key="GridCell.Tab.0.center" timestamp="1703590940663">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="1925" height="383" key="GridCell.Tab.0.center/0.0.1968.1152@0.0.1968.1152" timestamp="1703421283916" />
+    <state width="2444" height="386" key="GridCell.Tab.0.center/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1703590940663" />
+    <state width="2444" height="386" key="GridCell.Tab.0.left" timestamp="1703590940663">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="1925" height="383" key="GridCell.Tab.0.left/0.0.1968.1152@0.0.1968.1152" timestamp="1703421283916" />
+    <state width="2444" height="386" key="GridCell.Tab.0.left/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1703590940663" />
+    <state width="2444" height="386" key="GridCell.Tab.0.right" timestamp="1703590940663">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="1925" height="383" key="GridCell.Tab.0.right/0.0.1968.1152@0.0.1968.1152" timestamp="1703421283916" />
+    <state width="2444" height="386" key="GridCell.Tab.0.right/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1703590940663" />
+    <state width="2444" height="474" key="GridCell.Tab.1.bottom" timestamp="1703590857496">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="1925" height="383" key="GridCell.Tab.1.bottom/0.0.1968.1152@0.0.1968.1152" timestamp="1703421283916" />
+    <state width="2444" height="474" key="GridCell.Tab.1.bottom/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1703590857496" />
+    <state width="2444" height="474" key="GridCell.Tab.1.center" timestamp="1703590857496">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="1925" height="383" key="GridCell.Tab.1.center/0.0.1968.1152@0.0.1968.1152" timestamp="1703421283916" />
+    <state width="2444" height="474" key="GridCell.Tab.1.center/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1703590857496" />
+    <state width="2444" height="474" key="GridCell.Tab.1.left" timestamp="1703590857496">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="1925" height="383" key="GridCell.Tab.1.left/0.0.1968.1152@0.0.1968.1152" timestamp="1703421283916" />
+    <state width="2444" height="474" key="GridCell.Tab.1.left/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1703590857496" />
+    <state width="2444" height="474" key="GridCell.Tab.1.right" timestamp="1703590857496">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="1925" height="383" key="GridCell.Tab.1.right/0.0.1968.1152@0.0.1968.1152" timestamp="1703421283916" />
+    <state width="2444" height="474" key="GridCell.Tab.1.right/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1703590857496" />
+    <state x="486" y="218" key="SettingsEditor" timestamp="1703346870257">
+      <screen x="0" y="0" width="1968" height="1152" />
+    </state>
+    <state x="486" y="218" key="SettingsEditor/0.0.1968.1152@0.0.1968.1152" timestamp="1703346870257" />
+    <state width="1290" height="729" key="XDebugger.FullValuePopup" timestamp="1703566445130">
+      <screen x="1440" y="1440" width="2560" height="1440" />
+    </state>
+    <state width="991" height="583" key="XDebugger.FullValuePopup/0.0.1968.1152@0.0.1968.1152" timestamp="1703391790375" />
+    <state width="1290" height="729" key="XDebugger.FullValuePopup/1440.1440.2560.1440/0.1467.1440.1093@1440.1440.2560.1440" timestamp="1703566445130" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/LQR.py</url>
+          <line>54</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/get_data.py</url>
+          <line>49</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/get_data.py</url>
+          <line>40</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/LQR.py</url>
+          <line>35</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file:///opt/workcode/self_work/LQR_DRL/sac_model.py</url>
+          <line>158</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file:///opt/workcode/self_work/LQR_DRL/sac_model.py</url>
+          <line>157</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file:///opt/workcode/self_work/LQR_DRL/sac_model.py</url>
+          <line>66</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file:///opt/workcode/self_work/LQR_DRL/core.py</url>
+          <line>75</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/LQR_DRL$get_data.coverage" NAME="get_data Coverage Results" MODIFIED="1703559479742" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LQR_DRL$train.coverage" NAME="train Coverage Results" MODIFIED="1703572062605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LQR_DRL$flow_model.coverage" NAME="flow_model Coverage Results" MODIFIED="1703559587980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LQR_DRL$LQR.coverage" NAME="LQR Coverage Results" MODIFIED="1703564365651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LQR_DRL$draw.coverage" NAME="draw Coverage Results" MODIFIED="1703590871430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

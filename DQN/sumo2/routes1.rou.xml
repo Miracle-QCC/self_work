@@ -1,0 +1,10 @@
+<routes>
+    <vType id="car1" accel="1.0" decel="5.0" sigma="0.0" length="5.0" minGap="2.5" maxSpeed="6.89" lcStrategic="-1" lcKeepRight="0"/>
+    <vType id="car2" accel="5.0" decel="5.0" sigma="0.0" length="5.0" minGap="2.5" maxSpeed="15.89" color="1,0,0"/>
+    <route id="route1" edges="edge1"/>
+    <vehicle id="vehicle0" type="car1" route="route1" depart="0" departLane="1" arrivalLane="1" departSpeed="6.89"/>
+    <vehicle id="vehicle1" type="car1" route="route1" depart="2" departLane="2" arrivalLane="0" departSpeed="6.89"/>
+    <vehicle id="vehicle2" type="car1" route="route1" depart="5" departLane="0" arrivalLane="1" departSpeed="6.89"/>
+    <vehicle id="vehicle4" type="car1" route="route1" depart="7" departLane="1" arrivalLane="1" departSpeed="6.89"/>
+    <vehicle id="vehicle3" type="car2" route="route1" depart="9" departLane="1"/>
+</routes>
