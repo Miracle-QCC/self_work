@@ -1,522 +1,532 @@
-"""Proximal Policy Optimization (clip objective)."""
+import torch
+import torch.nn as nn
+from torch.optim import Adam
+from torch.utils.tensorboard import SummaryWriter
+import os
+import pickle
+import sys
+import torch
+import numpy as np
+import gym
+import math
 from copy import deepcopy
 import itertools
-
-import torch
-import torch.optim as optim
-from torch.utils.data.sampler import BatchSampler, SubsetRandomSampler
-from torch.distributions import kl_divergence
-
-from torch.nn.utils.rnn import pad_sequence
-
-import time
-
-import numpy as np
-import os, sys
-
-import ray
-
-from rl.envs import WrapEnv
-
-from rl.policies.actor import Gaussian_FF_Actor, Gaussian_LSTM_Actor
-from rl.policies.critic import FF_V, LSTM_V
-from rl.envs.normalize import get_normalization_params, PreNormalizer
-
-import pickle
-class SumTree(object):
-    data_pointer = 0
-
-    def __init__(self, capacity):
-        self.capacity = capacity  # for all priority values
-        self.tree = np.zeros(2 * capacity - 1)
-        # [--------------Parent nodes-------------][-------leaves to recode priority-------]
-        #             size: capacity - 1                       size: capacity
-        self.data = np.zeros(capacity, dtype=object)  # for all transitions
-        # [--------------data frame-------------]
-        #             size: capacity
-
-    def add(self, p, data):
-        tree_idx = self.data_pointer + self.capacity - 1
-        self.data[self.data_pointer] = data  # update data_frame
-        self.update(tree_idx, p)  # update tree_frame
-
-        self.data_pointer += 1
-        if self.data_pointer >= self.capacity:  # replace when exceed the capacity
-            self.data_pointer = 0
-
-    def update(self, tree_idx, p):
-        change = p - self.tree[tree_idx]
-        self.tree[tree_idx] = p
-        # then propagate the change through tree
-        while tree_idx != 0:  # this method is faster than the recursive loop in the reference code
-            tree_idx = (tree_idx - 1) // 2
-            self.tree[tree_idx] += change
-
-    def get_leaf(self, v):
-        """
-        Tree structure and array storage:
-        Tree index:
-             0         -> storing priority sum
-            / \
-          1     2
-         / \   / \
-        3   4 5   6    -> storing priority for transitions
-        Array type for storing:
-        [0,1,2,3,4,5,6]
-        """
-        parent_idx = 0
-        while True:  # the while loop is faster than the method in the reference code
-            cl_idx = 2 * parent_idx + 1  # this leaf's left and right kids
-            cr_idx = cl_idx + 1
-            if cl_idx >= len(self.tree):  # reach bottom, end search
-                leaf_idx = parent_idx
-                break
-            else:  # downward search, always search for a higher priority node
-                if v <= self.tree[cl_idx]:
-                    parent_idx = cl_idx
-                else:
-                    v -= self.tree[cl_idx]
-                    parent_idx = cr_idx
-
-        data_idx = leaf_idx - self.capacity + 1
-        return leaf_idx, self.tree[leaf_idx], self.data[data_idx]
-
-    @property
-    def total_p(self):
-        return self.tree[0]  # the root
+from rl.policies.replay_buffer_norm import ReplayBuffer
+from rl.policies.popsan import SquashedGaussianPopSpikeActor
+from rl.policies.core_cuda import MLPQFunction
+os.environ['MUJOCO_KEY_PATH'] = '/home/qcj/.mujoco/mjkey.txt'
+from util.env import env_factory
 
 
-class Memory(object):  # stored as ( s, a, r, s_ ) in SumTree
-    epsilon = 0.01  # small amount to avoid zero priority
-    alpha1 = 0.6  # [0~1] convert the importance of TD error to priority
-    beta = 0.4  # importance-sampling, from initial value increasing to 1
-    beta_increment_per_sampling = 0.001
-    abs_err_upper = 1.  # clipped abs error
+class SpikeActorDeepCritic(nn.Module):
 
-    def __init__(self, max_size, batch_size):
-        # max_size--经验池大小
-        self.tree = SumTree(max_size)
-        # batch_size--一次采样的经验数量
-        self.batch_size = batch_size
-        # mem_cnt--经验池中的经验数量计数器
-        self.mem_cnt = 0
+    def __init__(self, observation_space, action_space,
+                 encoder_pop_dim, decoder_pop_dim, mean_range, std, spike_ts, device,
+                 hidden_sizes=(256, 256), activation=nn.ReLU):
+        super().__init__()
 
-    def __len__(self):
-        return self.mem_cnt
-
-    def store_transition(self, s, a, r, s_, done):
-        transition = np.hstack((s.flatten(), a, r, s_.flatten(), done))
-        max_p = np.max(self.tree.tree[-self.tree.capacity:])
-        if max_p == 0:
-            max_p = self.abs_err_upper
-        self.tree.add(max_p, transition)  # set the max p for new p
-        self.mem_cnt += 1
-
-    def sample_buffer(self, n):
-        b_idx, b_memory, ISWeights = np.empty((n,), dtype=np.int32), np.empty((n, self.tree.data[0].size)), np.empty(
-            (n, 1))
-        pri_seg = self.tree.total_p / self.batch_size  # priority segment
-        self.beta = np.min([1., self.beta + self.beta_increment_per_sampling])  # max = 1
-
-        min_prob = np.min(self.tree.tree[-self.tree.capacity:]) / self.tree.total_p  # for later calculate ISweight
-        min_prob += 1e-4
-        for i in range(n):
-            a, b = pri_seg * i, pri_seg * (i + 1)
-            v = np.random.uniform(a, b)
-
-            idx, p, data = self.tree.get_leaf(v)
-            prob = p / self.tree.total_p
-            ISWeights[i, 0] = np.power(prob / min_prob, -self.beta)
-            b_idx[i], b_memory[i, :] = idx, data
-        return b_idx, b_memory, ISWeights
-
-    def batch_update(self, tree_idx, abs_errors):
-        abs_errors += self.epsilon  # convert to abs and avoid 0
-        clipped_errors = np.minimum(abs_errors, self.abs_err_upper)
-        ps = np.power(clipped_errors, self.alpha1)
-        for ti, p in zip(tree_idx, ps):
-            self.tree.update(ti, p)
-
-class SAC:
-    def __init__(self, args, save_path):
-        self.env_name = args['env_name']
-        self.gamma = args['gamma']
-        self.lr = args['lr']
-        self.eps = args['eps']
-        self.entropy_coeff = args['entropy_coeff']
-        self.clip = args['clip']
-        self.batch_size = args['batch_size']
-        self.epochs = args['epochs']
-        self.num_steps = args['num_steps']
-        self.max_traj_len = args['max_traj_len']
-        self.n_proc = args['num_procs']
-        self.recurrent = args['recurrent']
-        self.buffer = Memory(max_size=1e6, batch_size=args['batch_size'])
-        self.total_steps = 0
-        self.highest_reward = -1
-        self.limit_cores = 0
-
-        self.save_path = save_path
-
-    def save(self, policy, critic1,critic2):
-
+        obs_dim = observation_space.shape[0]
+        act_dim = action_space.shape[0]
         try:
-            os.makedirs(self.save_path)
-        except OSError:
-            pass
-        filetype = ".pt"  # pytorch model
-        torch.save(policy, os.path.join(self.save_path, "actor" + filetype))
-        torch.save(critic1, os.path.join(self.save_path, "critic1" + filetype))
-        torch.save(critic2, os.path.join(self.save_path, "critic2" + filetype))
+            act_limit = action_space.high[0]
+        except:
+            act_limit = 1
+        # build policy and value functions
+        self.popsan = SquashedGaussianPopSpikeActor(obs_dim, act_dim, encoder_pop_dim, decoder_pop_dim, hidden_sizes,
+                                                    mean_range, std, spike_ts, act_limit, device)
+        self.q1 = MLPQFunction(obs_dim, act_dim, hidden_sizes, activation)
+        self.q2 = MLPQFunction(obs_dim, act_dim, hidden_sizes, activation)
 
-
-    @ray.remote
-    @torch.no_grad()
-    def sample(self, env_fn, policy, critic, min_steps, max_traj_len, deterministic=False, anneal=1.0, term_thresh=0):
-        """
-        Sample at least min_steps number of total timesteps, truncating
-        trajectories only if they exceed max_traj_len number of timesteps
-        """
-        torch.set_num_threads(1)  # By default, PyTorch will use multiple cores to speed up operations.
-        # This can cause issues when Ray also uses multiple cores, especially on machines
-        # with a lot of CPUs. I observed a significant speedup when limiting PyTorch
-        # to a single core - I think it basically stopped ray workers from stepping on each
-        # other's toes.
-
-        env = WrapEnv(env_fn)  # TODO
-
-        memory = []
-        num_steps = 0
-        while num_steps < min_steps:
-            state = torch.Tensor(env.reset())
-
-            done = False
-            traj_len = 0
-            if hasattr(policy, 'init_hidden_state'):
-                policy.init_hidden_state()
-            if hasattr(critic, 'init_hidden_state'):
-                critic.init_hidden_state()
-            while not done and traj_len < max_traj_len:
-                action = policy(state, deterministic=deterministic)
-                # value = critic(state)
-                next_state, reward, done, _ = env.step(action.numpy(), term_thresh=term_thresh)
-                memory.append(state.numpy(), action.numpy(), reward, next_state, done)
-                state = torch.Tensor(next_state)
-                traj_len += 1
-                num_steps += 1
-        return memory
-
-    def sample_parallel(self, env_fn, policy, critic, min_steps, max_traj_len, deterministic=False, anneal=1.0,
-                        term_thresh=0):
-        worker = self.sample
-        args = (
-            self, env_fn, policy, critic, min_steps // self.n_proc, max_traj_len, deterministic, anneal, term_thresh)
-
-        # Create pool of workers, each getting data for min_steps
-        workers = [worker.remote(*args) for _ in range(self.n_proc)]
-
-        result = []
-        total_steps = 0
-        rewards = []
-
-        self.ep_returns = []  # for logging
-        self.ep_lens = []
-        while total_steps < min_steps:
-            # get result from a worker
-            ready_ids, _ = ray.wait(workers, num_returns=1)
-
-            # update result
-            result.append(ray.get(ready_ids[0]))
-
-            # remove ready_ids from workers (O(n)) but n isn't that big
-            workers.remove(ready_ids[0])
-
-            # update total steps
-            total_steps += len(result[-1])
-
-            # start a new worker
-            workers.append(worker.remote(*args))
-
-        # O(n)
-        def merge(buffers):
-            # merged = PPOBuffer(self.gamma, self.lam)
-            for buf in buffers:
-                state, action, reward, next_state, done = zip(*buf)
-                self.buffer.store_transition(state, action, reward, next_state, done)
-                rewards += reward
-
-        # 将收集的数据存入sac的buff中
-        merge(result)
-        return rewards
-        # Set up function for computing SAC_baseline Q-losses
-
-    def compute_loss_q(self, data, q1, q2, q1_targ, q2_targ, pi):
-        o, a, r, o2, d = zip(*data)
+    def act(self, obs, batch_size, deterministic=False):
         with torch.no_grad():
-            o = torch.FloatTensor(o)
-            a = torch.FloatTensor(a)
-            r = torch.FloatTensor(r)
-            o2 = torch.FloatTensor(o2)
-            d = torch.FloatTensor(d)
-        q1 = q1(o, a)
-        q2 = q2(o, a)
+            a, _ = self.popsan(obs, batch_size, deterministic, False)
+            a = a.to('cpu')
+            return a.numpy()
+def spike_sac(env_fn, actor_critic=SpikeActorDeepCritic, ac_kwargs=dict(), seed=0,
+              steps_per_epoch=10000, epochs=100, replay_size=int(1e6), gamma=0.99,
+              polyak=0.995, popsan_lr=1e-4, q_lr=1e-3, alpha=0.2, batch_size=100, start_steps=1000,
+              update_after=1000, update_every=50, num_test_episodes=10, max_ep_len=1000,
+              save_freq=10000, norm_clip_limit=3, norm_update=50, tb_comment='', model_idx=0, use_cuda=True):
+    """
+    Spike Soft Actor-Critic (SAC)
+
+
+    Args:
+        env_fn : A function which creates a copy of the environment.
+            The environment must satisfy the OpenAI Gym API.
+
+        actor_critic: The constructor method for a PyTorch Module with an ``act``
+            method, a ``popsan`` module, a ``q1`` module, and a ``q2`` module.
+            The ``act`` method and ``popsan`` module should accept batches of
+            observations as inputs, and ``q1`` and ``q2`` should accept a batch
+            of observations and a batch of actions as inputs. When called,
+            ``act``, ``q1``, and ``q2`` should return:
+
+            ===========  ================  ======================================
+            Call         Output Shape      Description
+            ===========  ================  ======================================
+            ``act``      (batch, act_dim)  | Numpy array of actions for each
+                                           | observation.
+            ``q1``       (batch,)          | Tensor containing one current estimate
+                                           | of Q* for the provided observations
+                                           | and actions. (Critical: make sure to
+                                           | flatten this!)
+            ``q2``       (batch,)          | Tensor containing the other current
+                                           | estimate of Q* for the provided observations
+                                           | and actions. (Critical: make sure to
+                                           | flatten this!)
+            ===========  ================  ======================================
+
+            Calling ``popsan`` should return:
+
+            ===========  ================  ======================================
+            Symbol       Shape             Description
+            ===========  ================  ======================================
+            ``a``        (batch, act_dim)  | Tensor containing actions from policy
+                                           | given observations.
+            ``logp_pi``  (batch,)          | Tensor containing log probabilities of
+                                           | actions in ``a``. Importantly: gradients
+                                           | should be able to flow back into ``a``.
+            ===========  ================  ======================================
+
+        ac_kwargs (dict): Any kwargs appropriate for the ActorCritic object
+            you provided to SAC.
+
+        seed (int): Seed for random number generators.
+
+        steps_per_epoch (int): Number of steps of interaction (state-action pairs)
+            for the agent and the environment in each epoch.
+
+        epochs (int): Number of epochs to run and train agent.
+
+        replay_size (int): Maximum length of replay buffer.
+
+        gamma (float): Discount factor. (Always between 0 and 1.)
+
+        polyak (float): Interpolation factor in polyak averaging for target
+            networks. Target networks are updated towards main networks
+            according to:
+
+            .. math:: \\theta_{\\text{targ}} \\leftarrow
+                \\rho \\theta_{\\text{targ}} + (1-\\rho) \\theta
+
+            where :math:`\\rho` is polyak. (Always between 0 and 1, usually
+            close to 1.)
+
+        popsan_lr (float): Learning rate for policy.
+
+        q_lr (float): Learning rate for Q-networks.
+
+        alpha (float): Entropy regularization coefficient. (Equivalent to
+            inverse of reward scale in the original SAC paper.)
+
+        batch_size (int): Minibatch size for SGD.
+
+        start_steps (int): Number of steps for uniform-random action selection,
+            before running real policy. Helps exploration.
+
+        update_after (int): Number of env interactions to collect before
+            starting to do gradient descent updates. Ensures replay buffer
+            is full enough for useful updates.
+
+        update_every (int): Number of env interactions that should elapse
+            between gradient descent updates. Note: Regardless of how long
+            you wait between updates, the ratio of env steps to gradient steps
+            is locked to 1.
+
+        num_test_episodes (int): Number of episodes to test the deterministic
+            policy at the end of each epoch.
+
+        max_ep_len (int): Maximum length of trajectory / episode / rollout.
+
+        save_freq (int): How often (in terms of gap between epochs) to save
+            the current policy and value function.
+
+        norm_clip_limit (float): Clip limit for normalize observation
+
+        norm_update (int): Number of steps to update running mean and var in memory
+
+        tb_comment (str): Comment for tensorboard writer
+
+        model_idx (int): Index of training model
+
+        use_cuda (bool): If true use cuda for computation
+    """
+    # Set device
+    if use_cuda:
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    else:
+        device = torch.device("cpu")
+
+    torch.manual_seed(seed)
+    np.random.seed(seed)
+
+    env, test_env = env_fn(), env_fn()
+    obs_dim = env.observation_space.shape
+    act_dim = env.action_space.shape[0]
+
+    # Action limit for clamping: critically, assumes all dimensions share the same bound!
+    # act_limit = env.action_space.high[0]
+
+    # Create actor-critic module and target networks
+    ac = actor_critic(env.observation_space, env.action_space, **ac_kwargs)
+    ac_targ = deepcopy(ac)
+    ac.to(device)
+    ac_targ.to(device)
+
+    # Freeze target networks with respect to optimizers (only update via polyak averaging)
+    for p in ac_targ.parameters():
+        p.requires_grad = False
+
+    # List of parameters for both Q-networks (save this for convenience)
+    q_params = itertools.chain(ac.q1.parameters(), ac.q2.parameters())
+
+    # List of parameters for PopSAN parameters (save this for convenience)
+    popsan_params = itertools.chain(ac.popsan.encoder.parameters(),
+                                    ac.popsan.snn.parameters(),
+                                    ac.popsan.decoder.parameters())
+
+    # Experience buffer
+    replay_buffer = ReplayBuffer(obs_dim=obs_dim, act_dim=act_dim, size=replay_size,
+                                 clip_limit=norm_clip_limit, norm_update_every=norm_update)
+
+    def _compute_policy_values(obs_pi, obs_q):
+        # with torch.no_grad():
+        actions_pred, log_pis = ac.popsan(obs_pi,batch_size=len(obs_pi))
+
+        qs1 = ac.q1(obs_q, actions_pred)
+        qs2 = ac.q2(obs_q, actions_pred)
+
+        return qs1 - log_pis.detach(), qs2 - log_pis.detach()
+
+    def _compute_random_values(obs, actions, critic):
+        random_values = critic(obs, actions)
+        random_log_probs = math.log(0.5 ** act_dim)
+        return random_values - random_log_probs
+
+    # Set up function for computing Spike-SAC Q-losses
+    def compute_loss_q(data):
+        o, a, r, o2, d = data['obs'], data['act'], data['rew'], data['obs2'], data['done']
+
+        q1 = ac.q1(o, a)
+        q2 = ac.q2(o, a)
 
         # Bellman backup for Q functions
         with torch.no_grad():
             # Target actions come from *current* policy
-            a2, logp_a2 = pi(o2)
+            a2, logp_a2 = ac.popsan(o2, batch_size)
 
             # Target Q-values
-            q1_pi_targ = q1_targ(o2, a2)
-            q2_pi_targ = q2_targ(o2, a2)
+            q1_pi_targ = ac_targ.q1(o2, a2)
+            q2_pi_targ = ac_targ.q2(o2, a2)
             q_pi_targ = torch.min(q1_pi_targ, q2_pi_targ)
-            #####   My modified location
-            backup = r + self.gamma * (1 - d) * (q_pi_targ - self.alpha * logp_a2)
+            backup = r + gamma * (1 - d) * (q_pi_targ - alpha * logp_a2)
 
         # MSE loss against Bellman backup
         loss_q1 = ((q1 - backup) ** 2).mean()
         loss_q2 = ((q2 - backup) ** 2).mean()
-        loss_q = loss_q1 + loss_q2
-        # writer.add_scalar('loss_q',loss_q,global_step=self.time)
+
+        # CQL addon
+        random_actions = torch.FloatTensor(q1.shape[0] * 10, a.shape[-1]).uniform_(-1, 1).to(device)
+        num_repeat = int(random_actions.shape[0] / o.shape[0])
+        temp_states = o.unsqueeze(1).repeat(1, num_repeat, 1).view(o.shape[0] * num_repeat, o.shape[1])
+        temp_next_states = o2.unsqueeze(1).repeat(1, num_repeat, 1).view(o2.shape[0] * num_repeat,
+                                                                                  o2.shape[1])
+
+        current_pi_values1, current_pi_values2 = _compute_policy_values(temp_states, temp_states)
+        next_pi_values1, next_pi_values2 = _compute_policy_values(temp_next_states, temp_states)
+
+        random_values1 = _compute_random_values(temp_states, random_actions, ac.q1).reshape(o.shape[0],
+                                                                                                        num_repeat, 1)
+        random_values2 = _compute_random_values(temp_states, random_actions, ac.q2).reshape(o.shape[0],
+                                                                                                        num_repeat, 1)
+
+        current_pi_values1 = current_pi_values1.reshape(o.shape[0], num_repeat, 1)
+        current_pi_values2 = current_pi_values2.reshape(o.shape[0], num_repeat, 1)
+
+        next_pi_values1 = next_pi_values1.reshape(o.shape[0], num_repeat, 1)
+        next_pi_values2 = next_pi_values2.reshape(o.shape[0], num_repeat, 1)
+
+        cat_q1 = torch.cat([random_values1, current_pi_values1, next_pi_values1], 1)
+        cat_q2 = torch.cat([random_values2, current_pi_values2, next_pi_values2], 1)
+
+        assert cat_q1.shape == (o.shape[0], 3 * num_repeat, 1), f"cat_q1 instead has shape: {cat_q1.shape}"
+        assert cat_q2.shape == (o.shape[0], 3 * num_repeat, 1), f"cat_q2 instead has shape: {cat_q2.shape}"
+
+        cql1_scaled_loss = ((torch.logsumexp(cat_q1, dim=1).mean()) - q1.mean())
+        cql2_scaled_loss = ((torch.logsumexp(cat_q2, dim=1).mean()) - q2.mean())
+
+
+        loss_q = loss_q1 + loss_q2 + cql1_scaled_loss * 0.1+ cql2_scaled_loss * 0.1
+
         # Useful info for logging
-        # q_info = dict(Q1Vals=q1.detach().numpy(),
-        # Q2Vals=q2.detach().numpy())
+        q_info = dict(Q1Vals=q1.to('cpu').detach().numpy(),
+                      Q2Vals=q2.to('cpu').detach().numpy())
 
-        return loss_q
+        return loss_q, q_info
 
-    def compute_loss_pi(self, data, q1, q2, pi):
-        o, _, _, _, _ = zip(*data)
-        o = torch.FloatTensor(o)
-        pi, logp_pi = pi(o)
-        q1_pi = q1(o, pi)
-        q2_pi = q2(o, pi)
+    # Set up function for computing SAC pi loss
+    def compute_loss_pi(data, env_fn):
+        o = data['obs']
+
+        # env = env_fn()
+        # mirror_observation, mirror_action = None, None
+        # if hasattr(env, 'mirror_observation'):
+        #     if env.clock_based:
+        #         mirror_observation = env.mirror_clock_observation
+        #     else:
+        #         mirror_observation = env.mirror_observation
+        #     
+        # if hasattr(env, 'mirror_action'):
+        #     mirror_action = env.mirror_action
+        # 
+        # if mirror_observation is not None and mirror_action is not None:
+        #     # deterministic_actions = policy(obs_batch)
+        #     deterministic_actions = ac.act(o, batch_size=batch_size, deterministic=True)
+        #     if env.clock_based:
+        #         mir_obs = mirror_observation(o.cpu(), env.clock_inds).to(device)
+        #         mirror_actions = ac.act(mir_obs, batch_size=batch_size, deterministic=True)
+        #     else:
+        #         mirror_actions = ac.act(mirror_observation(o.cpu()).to(device),batch_size=batch_size,deterministic=True)
+        #     mirror_actions = mirror_action(mirror_actions)
+        #     mirror_loss = 0.4 * (deterministic_actions - mirror_actions).pow(2).mean()
+        # else:
+        #     mirror_loss = 0
+
+        pi, logp_pi = ac.popsan(o, batch_size)
+        q1_pi = ac.q1(o, pi)
+        q2_pi = ac.q2(o, pi)
         q_pi = torch.min(q1_pi, q2_pi)
 
         # Entropy-regularized policy loss
-        #####   My modified location
-        loss_pi = (self.alpha * logp_pi - q_pi).mean()
-        # writer.add_scalar('-loss_pi', -loss_pi, global_step=self.time)
+        loss_pi = (alpha * logp_pi - q_pi).mean() 
+
         # Useful info for logging
-        # pi_info = dict(LogPi=logp_pi.detach().numpy())
+        pi_info = dict(LogPi=logp_pi.to('cpu').detach().numpy())
 
-        return loss_pi
+        return loss_pi, pi_info
 
-    def train(self,
-              env_fn,
-              policy,
-              policy_targ,
-              q1,
-              q1_targ,
-              q2,
-              q2_targ,
-              n_itr,
-              logger=None, anneal_rate=1.0):
-        self.pi = policy
-        self.pi_targ = policy_targ
-        self.q1 = q1
-        self.q1_targ = q1_targ
-        self.q2 = q2
-        self.q2_targ = q2_targ
+    # Set up optimizers for policy and q-function
+    popsan_mean_optimizer = Adam(popsan_params, lr=popsan_lr)
+    pi_std_optimizer = Adam(ac.popsan.log_std_network.parameters(), lr=q_lr)
+    q_optimizer = Adam(q_params, lr=q_lr)
 
-        self.q_params = itertools.chain(self.q1.parameters(), self.q2.parameters())
-        self.q_targ_params = itertools.chain(self.q1_targ.parameters(), self.q2_targ.parameters())
-        self.actor_optimizer = optim.Adam(self.pi.parameters(), lr=self.lr, eps=self.eps)
-        self.critic_optimizer = optim.Adam(self.q_params, lr=self.lr, eps=self.eps)
-        start_time = time.time()
+    def update(data, env_fn):
 
-        env = env_fn()
-        obs_mirr, act_mirr = None, None
-        if hasattr(env, 'mirror_observation'):
-            if env.clock_based:
-                obs_mirr = env.mirror_clock_observation
-            else:
-                obs_mirr = env.mirror_observation
+        # First run one gradient descent step for Q1 and Q2
+        q_optimizer.zero_grad()
+        loss_q, q_info = compute_loss_q(data)
+        loss_q.backward()
+        q_optimizer.step()
 
-        if hasattr(env, 'mirror_action'):
-            act_mirr = env.mirror_action
+        # Freeze Q-networks so you don't waste computational effort
+        # computing gradients for them during the policy learning step.
+        for p in q_params:
+            p.requires_grad = False
 
-        curr_anneal = 1.0
-        curr_thresh = 0
-        start_itr = 0
-        ep_counter = 0
-        do_term = False
-        for itr in range(n_itr):
-            print("********** Iteration {} ************".format(itr))
+        # Next run one gradient descent step for pi.
+        popsan_mean_optimizer.zero_grad()
+        pi_std_optimizer.zero_grad()
+        loss_pi, pi_info = compute_loss_pi(data, env_fn)
+        loss_pi.backward()
+        popsan_mean_optimizer.step()
+        pi_std_optimizer.step()
 
-            if self.highest_reward > (2 / 3) * self.max_traj_len and curr_anneal > 0.5:
-                curr_anneal *= anneal_rate
-            if do_term and curr_thresh < 0.35:
-                curr_thresh = .1 * 1.0006 ** (itr - start_itr)
-            batch = self.sample_parallel(env_fn, self.policy, self.critic, self.num_steps, self.max_traj_len,
-                                         anneal=curr_anneal, term_thresh=curr_thresh)
+        # Unfreeze Q-networks so you can optimize it at next DDPG step.
+        for p in q_params:
+            p.requires_grad = True
 
-            print("time elapsed: {:.2f} s".format(time.time() - start_time))
-
-            optimizer_start = time.time()
-            for epoch in range(self.epochs):
-                losses = []
-                tree_idx, minibatch, ISWeights = self.buffer.sample_buffer(self.batch_size)
-                state = minibatch[:, 0:self.state_space_dim]
-                action = minibatch[:, self.state_space_dim:self.state_space_dim + 1]
-                reward = minibatch[:, self.state_space_dim + 1:self.state_space_dim + 2]
-                next_state = minibatch[:, self.state_space_dim + 2:-1]
-                done = minibatch[:, -1]
-
-                data = zip(state, action, reward, next_state, done)
-                loss_q = self.compute_loss_q(data, self.q1, self.q2, self.q1_targ, self.q2_targ, self.pi)
-
-                self.critic_optimizer.zero_grad()
-                loss_q.backward()
-                self.critic_optimizer.step()
-
-                loss_pi = self.compute_loss_pi(data, self.q1, self.q2, self.pi)
-                self.actor_optimizer.zero_grad()
-                loss_pi.backward()
-                self.actor_optimizer.step()
-                losses.append([loss_q.item(), loss_pi.item()])
-
-                # TODO: add verbosity arguments to suppress this
-                print(' '.join(["%g" % x for x in np.mean(losses, axis=0)]))
-
-            opt_time = time.time() - optimizer_start
-            print("optimizer time elapsed: {:.2f} s".format(opt_time))
-
-            if np.mean(batch.ep_lens) >= self.max_traj_len * 0.75:
-                ep_counter += 1
-            if do_term == False and ep_counter > 50:
-                do_term = True
-                start_itr = itr
-
-            if logger is not None:
-                evaluate_start = time.time()
-                test = self.sample_parallel(env_fn, self.pi, self.critic, self.num_steps // 2, self.max_traj_len,
-                                            deterministic=True)
-                eval_time = time.time() - evaluate_start
-                print("evaluate time elapsed: {:.2f} s".format(eval_time))
-
-                avg_eval_reward = np.mean(test[])
-                avg_batch_reward = np.mean(batch)
-                # avg_ep_len = np.mean(batch.ep_lens)
-                mean_losses = np.mean(losses, axis=0)
-                # print("avg eval reward: {:.2f}".format(avg_eval_reward))
-
-                sys.stdout.write("-" * 37 + "\n")
-                sys.stdout.write("| %15s | %15s |" % ('Return (test)', avg_eval_reward) + "\n")
-                sys.stdout.write("| %15s | %15s |" % ('Return (batch)', avg_batch_reward) + "\n")
-                # sys.stdout.write("| %15s | %15s |" % ('Mean Eplen', avg_ep_len) + "\n")
-                # sys.stdout.write("| %15s | %15s |" % ('Mean KL Div', "%8.3g" % kl) + "\n")
-                # sys.stdout.write("| %15s | %15s |" % ('Mean Entropy', "%8.3g" % entropy) + "\n")
-                sys.stdout.write("-" * 37 + "\n")
-                sys.stdout.flush()
-
-                entropy = np.mean(entropies)
-                kl = np.mean(kls)
-
-                logger.add_scalar("Test/Return", avg_eval_reward, itr)
-                logger.add_scalar("Train/Return", avg_batch_reward, itr)
-                # logger.add_scalar("Train/Mean Eplen", avg_ep_len, itr)
-                logger.add_scalar("Train/Mean KL Div", kl, itr)
-                logger.add_scalar("Train/Mean Entropy", entropy, itr)
-
-                logger.add_scalar("Misc/Critic Loss", mean_losses[2], itr)
-                logger.add_scalar("Misc/Actor Loss", mean_losses[0], itr)
-                logger.add_scalar("Misc/Mirror Loss", mean_losses[5], itr)
-                logger.add_scalar("Misc/Timesteps", self.total_steps, itr)
-
-                # logger.add_scalar("Misc/Sample Times", samp_time, itr)
-                logger.add_scalar("Misc/Optimize Times", opt_time, itr)
-                logger.add_scalar("Misc/Evaluation Times", eval_time, itr)
-                logger.add_scalar("Misc/Termination Threshold", curr_thresh, itr)
-
-            # TODO: add option for how often to save model
-            if self.highest_reward < avg_eval_reward:
-                self.highest_reward = avg_eval_reward
-                self.save(self.pi, self.q1, self.q2)
-
-
-def run_experiment(args):
-    from util.env import env_factory
-    from util.log import create_logger
-
-    # wrapper function for creating parallelized envs
-    env_fn = env_factory(args.env_name, simrate=args.simrate, command_profile=args.command_profile,
-                         input_profile=args.input_profile, learn_gains=args.learn_gains,
-                         dynamics_randomization=args.dyn_random, reward=args.reward, history=args.history,
-                         mirror=args.mirror, ik_baseline=args.ik_baseline, no_delta=args.no_delta, traj=args.traj)
-    obs_dim = env_fn().observation_space.shape[0]
-    action_dim = env_fn().action_space.shape[0]
-
-    # Set up Parallelism
-    os.environ['OMP_NUM_THREADS'] = '1'
-    if not ray.is_initialized():
-        if args.redis_address is not None:
-            ray.init(num_cpus=args.num_procs, redis_address=args.redis_address)
-        else:
-            ray.init(num_cpus=args.num_procs)
-
-    # Set seeds
-    torch.manual_seed(args.seed)
-    np.random.seed(args.seed)
-
-    if args.previous is not None:
-        policy = torch.load(os.path.join(args.previous, "actor.pt"))
-        critic = torch.load(os.path.join(args.previous, "critic.pt"))
-        # TODO: add ability to load previous hyperparameters, if this is something that we event want
-        # with open(args.previous + "experiment.pkl", 'rb') as file:
-        #     args = pickle.loads(file.read())
-        print("loaded model from {}".format(args.previous))
-    else:
-        if args.recurrent:
-            policy = Gaussian_LSTM_Actor(obs_dim, action_dim, fixed_std=np.exp(-2), env_name=args.env_name)
-            critic = LSTM_V(obs_dim)
-        else:
-            if args.learn_stddev:
-                policy = Gaussian_FF_Actor(obs_dim, action_dim, fixed_std=None, env_name=args.env_name,
-                                           bounded=args.bounded)
-            else:
-                policy = Gaussian_FF_Actor(obs_dim, action_dim, fixed_std=np.exp(args.std_dev), env_name=args.env_name,
-                                           bounded=args.bounded)
-            critic = FF_V(obs_dim)
-
+        # Finally, update target networks by polyak averaging.
         with torch.no_grad():
-            policy.obs_mean, policy.obs_std = map(torch.Tensor,
-                                                  get_normalization_params(iter=args.input_norm_steps, noise_std=1,
-                                                                           policy=policy, env_fn=env_fn,
-                                                                           procs=args.num_procs))
-        critic.obs_mean = policy.obs_mean
-        critic.obs_std = policy.obs_std
+            for p, p_targ in zip(ac.parameters(), ac_targ.parameters()):
+                # NB: We use an in-place operations "mul_", "add_" to update target
+                # params, as opposed to "mul" and "add", which would make new tensors.
+                p_targ.data.mul_(polyak)
+                p_targ.data.add_((1 - polyak) * p.data)
 
-    policy.train()
-    critic.train()
+    def get_action(o, deterministic=False):
+        return ac.act(torch.as_tensor(o, dtype=torch.float32, device=device), 1,
+                      deterministic)
 
-    print("obs_dim: {}, action_dim: {}".format(obs_dim, action_dim))
+    def test_agent():
+        ###
+        # compuate the return mean test reward
+        ###
+        test_reward_sum = 0
+        for j in range(num_test_episodes):
+            o, d, ep_ret, ep_len = test_env.reset(), False, 0, 0
+            if isinstance(o, tuple):
+                o = o[0]
+            # while not (d or (ep_len == max_ep_len)):
+            while not d:
+                # Take deterministic actions at test time
+                a_test = get_action(replay_buffer.normalize_obs(o), True)
+                if len(a_test.shape) > 1:
+                    a_test = a_test.squeeze()
+                res = test_env.step(a_test)
+                if len(res) == 5:
+                    o, r, d, _, _ = res
+                else:
+                    o, r, d, _ = res
+                # o, r, d, _ = test_env.step(get_action(replay_buffer.normalize_obs(o), True))
+                if isinstance(o, tuple):
+                    o = o[0]
+                o = o.squeeze()
+                ep_ret += r
+                ep_len += 1
+            test_reward_sum += ep_ret
+        return test_reward_sum / num_test_episodes
 
-    # create a tensorboard logging object
-    logger = create_logger(args)
+    ###
+    # add tensorboard support and save rewards
+    # Also create dir for saving parameters
+    ###
+    writer = SummaryWriter(comment="_" + tb_comment + "_" + str(model_idx))
+    save_test_reward = []
+    save_test_reward_steps = []
+    try:
+        os.mkdir("./sac_trained")
+        print("Directory params Created")
+    except FileExistsError:
+        print("Directory params already exists")
+    model_dir = "./sac_trained/spike-sac_" + tb_comment
+    try:
+        os.mkdir(model_dir)
+        print("Directory ", model_dir, " Created")
+    except FileExistsError:
+        print("Directory ", model_dir, " already exists")
 
-    algo = PPO(args=vars(args), save_path=logger.dir)
+    # Prepare for interaction with environment
+    total_steps = steps_per_epoch * epochs
+    o, ep_ret, ep_len = env.reset(), 0, 0
+    if isinstance(o, tuple):
+        o = o[0]
+    # Main loop: collect experience in env and update/log each epoch
+    for t in range(total_steps):
 
-    print()
-    print("Synchronous Distributed Proximal Policy Optimization:")
-    print(" ├ recurrent:      {}".format(args.recurrent))
-    print(" ├ run name:       {}".format(args.run_name))
-    print(" ├ max traj len:   {}".format(args.max_traj_len))
-    print(" ├ seed:           {}".format(args.seed))
-    print(" ├ num procs:      {}".format(args.num_procs))
-    print(" ├ lr:             {}".format(args.lr))
-    print(" ├ eps:            {}".format(args.eps))
-    print(" ├ lam:            {}".format(args.lam))
-    print(" ├ gamma:          {}".format(args.gamma))
-    print(" ├ learn stddev:  {}".format(args.learn_stddev))
-    print(" ├ std_dev:        {}".format(args.std_dev))
-    print(" ├ entropy coeff:  {}".format(args.entropy_coeff))
-    print(" ├ clip:           {}".format(args.clip))
-    print(" ├ minibatch size: {}".format(args.minibatch_size))
-    print(" ├ epochs:         {}".format(args.epochs))
-    print(" ├ num steps:      {}".format(args.num_steps))
-    print(" ├ use gae:        {}".format(args.use_gae))
-    print(" ├ max grad norm:  {}".format(args.max_grad_norm))
-    print(" └ max traj len:   {}".format(args.max_traj_len))
-    print()
+        # Until start_steps have elapsed, randomly sample actions
+        # from a uniform distribution for better exploration. Afterwards,
+        # use the learned policy.
+        if t > start_steps:
+            a = get_action(replay_buffer.normalize_obs(o))
+        else:
+            a = np.random.rand(10) * 2 -1
 
-    algo.train(env_fn, policy, critic, args.n_itr, logger=logger, anneal_rate=args.anneal)
+        # Step the env
+        # o2, r, d, _ = env.step(a)
+        if len(a.shape) > 1:
+            a = a.squeeze()
+        if len(a.shape) == 0:
+            a = a.reshape(-1)
+        res = env.step(a)
+        if len(res) == 5:
+            o2, r, d, _, _ = res
+        else:
+            o2, r, d, _ = res
+        if isinstance(o2, tuple):
+            o2 = o2[0]
+        ep_ret += r
+        ep_len += 1
+
+        # Ignore the "done" signal if it comes from hitting the time
+        # horizon (that is, when it's an artificial terminal signal
+        # that isn't based on the agent's state)
+        d = False if ep_len == max_ep_len else d
+
+        # Store experience to replay buffer
+        replay_buffer.store(o, a, r, o2, d)
+
+        # Super critical, easy to overlook step: make sure to update
+        # most recent observation!
+        o = o2
+
+        # End of trajectory handling
+        if d or (ep_len == max_ep_len):
+            writer.add_scalar(tb_comment + '/Train-Reward', ep_ret, t + 1)
+            o, ep_ret, ep_len = env.reset(), 0, 0
+            if isinstance(o, tuple):
+                o = o[0]
+
+        # Update handling
+        if t >= update_after and t % update_every == 0:
+            for j in range(update_every):
+                batch = replay_buffer.sample_batch(device, batch_size)
+                update(data=batch, env_fn=env_fn)
+
+        # End of epoch handling
+        if (t + 1) % steps_per_epoch == 0:
+            epoch = t+1
+
+            # Save model
+            if (epoch % save_freq == 0) or (epoch == epochs):
+                ac.popsan.to('cpu')
+                torch.save(ac.popsan.state_dict(),
+                           model_dir + '/' + "model" + str(model_idx) + "_e" + str(epoch) + '.pt')
+                # print("Learned Mean for encoder population: ")
+                # print(ac.popsan.encoder.mean.data)
+                # print("Learned STD for encoder population: ")
+                # print(ac.popsan.encoder.std.data)
+                ac.popsan.to(device)
+                print("Weights saved in ", model_dir + '/' + "model" + str(model_idx) + "_e" + str(epoch) + '.pt')
+
+            # Test the performance of the deterministic version of the agent.
+            test_mean_reward = test_agent()
+            save_test_reward.append(test_mean_reward)
+            save_test_reward_steps.append(t + 1)
+            writer.add_scalar(tb_comment + '/Test-Mean-Reward', test_mean_reward, t + 1)
+            print("Model: ", model_idx, " Steps: ", t + 1, " Mean Reward: ", test_mean_reward)
+
+    # Save Test Reward List
+    pickle.dump([save_test_reward, save_test_reward_steps],
+                open(model_dir + '/' + "model" + str(model_idx) + "_test_rewards.p", "wb+"))
+
+
+def run():
+    import math
+    import argparse
+    # env = gym.make('Pendulum-v1',max_episode_steps=300)
+    traj = "walking"
+    env_fn = env_factory('Cassie-v0',
+                         simrate=50,
+                         command_profile='clock',
+                         input_profile='full',
+                         learn_gains=False,
+                         dynamics_randomization=True,
+                         reward='iros_paper',
+                         history=0,
+                         mirror=True,
+                         ik_baseline=False,
+                         no_delta=True,
+                         traj=traj)
+
+    # parser = argparse.ArgumentParser()
+    # parser.add_argument('--env', type=str, default='Pendulum-v1')
+    # parser.add_argument('--encoder_pop_dim', type=int, default=10)
+    # parser.add_argument('--decoder_pop_dim', type=int, default=10)
+    # parser.add_argument('--encoder_var', type=float, default=0.15)
+    # parser.add_argument('--start_model_idx', type=int, default=0)
+    # parser.add_argument('--num_model', type=int, default=10)
+    # parser.add_argument('--epochs', type=int, default=100)
+    # args = parser.parse_args()
+    epochs = 1000
+    START_MODEL = 0
+    NUM_MODEL = 10
+    AC_KWARGS = dict(hidden_sizes=[256, 256],
+                     encoder_pop_dim=10,
+                     decoder_pop_dim=10,
+                     mean_range=(-3, 3),
+                     std=math.sqrt(0.15),
+                     spike_ts=5,
+                     device=torch.device('cuda'))
+    COMMENT = "sac-popsan-cql-" + 'Cassie-v0' + "-encoder-dim-" + str(AC_KWARGS['encoder_pop_dim']) + \
+              "-decoder-dim-" + str(AC_KWARGS['decoder_pop_dim'])
+    for num in range(START_MODEL, START_MODEL + NUM_MODEL):
+        seed = num * 10
+        # spike_sac(lambda: gym.make(args.env), actor_critic=SpikeActorDeepCritic, ac_kwargs=AC_KWARGS,
+        #           popsan_lr=1e-4, gamma=0.99, seed=seed, epochs=args.epochs,
+        #           norm_clip_limit=3.0, tb_comment=COMMENT, model_idx=num, steps_per_epoch=1000)
+        spike_sac(env_fn, actor_critic=SpikeActorDeepCritic, ac_kwargs=AC_KWARGS,
+                  popsan_lr=1e-4, gamma=0.99, seed=seed, epochs=epochs,
+                  norm_clip_limit=3.0, tb_comment=COMMENT, model_idx=num, steps_per_epoch=1000)
+if __name__ == '__main__':
+    run()
